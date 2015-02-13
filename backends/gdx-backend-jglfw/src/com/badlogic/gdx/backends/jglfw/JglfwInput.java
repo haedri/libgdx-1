@@ -39,6 +39,7 @@ import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.InputProcessorQueue;
 import com.badlogic.gdx.Input.Buttons;
 import com.badlogic.gdx.graphics.Pixmap;
+import com.badlogic.gdx.input.Cursor;
 import com.badlogic.gdx.utils.IntSet;
 import com.badlogic.jglfw.GlfwCallbackAdapter;
 
@@ -296,6 +297,15 @@ public class JglfwInput implements Input {
 
 	@Override
 	public void setCursorImage (Pixmap pixmap, int xHotspot, int yHotspot) {
+	}
+	
+	@Override
+	public Cursor newCursor (Pixmap pixmap, int xHotspot, int yHotspot) {
+		return null;
+	}
+
+	@Override
+	public void setCursor (Cursor cursor) {
 	}
 
 	public void getTextInput (final TextInputListener listener, final String title, final String text, final String hint) {

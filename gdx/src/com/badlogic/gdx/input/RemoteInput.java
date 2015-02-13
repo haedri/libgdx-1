@@ -508,6 +508,15 @@ public class RemoteInput implements Runnable, Input {
 	@Override
 	public void setCursorImage (Pixmap pixmap, int xHotspot, int yHotspot) {
 	}
+	
+	@Override
+	public Cursor newCursor (Pixmap pixmap, int xHotspot, int yHotspot) {
+		return null;
+	}
+
+	@Override
+	public void setCursor (Cursor cursor) {
+	}
 
 	@Override
 	public void setCatchMenuKey (boolean catchMenu) {

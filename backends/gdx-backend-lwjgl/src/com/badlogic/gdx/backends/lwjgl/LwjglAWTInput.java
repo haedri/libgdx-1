@@ -57,7 +57,6 @@ import javax.swing.event.DocumentListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
-import com.badlogic.gdx.Input.TextInputListener;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.utils.IntSet;
 import com.badlogic.gdx.utils.Pool;
@@ -812,6 +811,16 @@ public class LwjglAWTInput implements Input, MouseMotionListener, MouseListener,
   public void setCursorImage(Pixmap pixmap, int xHotspot, int yHotspot) {
   }
 
+	
+	@Override
+	public com.badlogic.gdx.input.Cursor newCursor (Pixmap pixmap, int xHotspot, int yHotspot) {
+		return null;
+	}
+
+	@Override
+	public void setCursor (com.badlogic.gdx.input.Cursor cursor) {
+	}
+	
   @Override
 	public void setCatchMenuKey (boolean catchMenu) {
 		// TODO Auto-generated method stub

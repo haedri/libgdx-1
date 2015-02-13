@@ -21,6 +21,7 @@ import com.badlogic.gdx.Input.TextInputListener;
 import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.Pixmap;
+import com.badlogic.gdx.input.Cursor;
 
 /** The headless backend does its best to mock elements. This is intended to make code-sharing between
  * server and client as simple as possible.
@@ -225,5 +226,14 @@ public class MockInput implements Input {
 	@Override
 	public void setCursorImage(Pixmap pixmap, int xHotspot, int yHotspot) {
 
+	}
+	
+	@Override
+	public Cursor newCursor (Pixmap pixmap, int xHotspot, int yHotspot) {
+		return null;
+	}
+
+	@Override
+	public void setCursor (Cursor cursor) {
 	}
 }

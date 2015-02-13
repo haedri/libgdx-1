@@ -17,6 +17,7 @@
 package com.badlogic.gdx;
 
 import com.badlogic.gdx.graphics.Pixmap;
+import com.badlogic.gdx.input.Cursor;
 import com.badlogic.gdx.utils.ObjectIntMap;
 
 /** <p>
@@ -760,11 +761,30 @@ public interface Input {
 	/** Only viable on the desktop. Will set the mouse cursor image to the image represented by the
 	 * {@link com.badlogic.gdx.graphics.Pixmap}. The Pixmap must be in RGBA8888 format, width & height must be powers-of-two
 	 * greater than zero (not necessarily equal), and alpha transparency must be single-bit (i.e., 0x00 or 0xFF only). To revert to
-	 * the default operating system cursor, pass in a null Pixmap; xHotspot & yHotspot are ignored in this case.
+	 * the default operating system cursor, pass in a null Pixmap; xHotspot & yHotspot are ignored in this case. Use
+	 * {@link #newCursor(Pixmap, int, int)} and {@link #setCursor(Cursor)} instead if you plan of changing cursors multiple times.
 	 * 
 	 * @param pixmap the mouse cursor image as a {@link com.badlogic.gdx.graphics.Pixmap}, or null to revert to the default
 	 *           operating system cursor
 	 * @param xHotspot the x location of the hotspot pixel within the cursor image (origin top-left corner)
 	 * @param yHotspot the y location of the hotspot pixel within the cursor image (origin top-left corner) */
 	public void setCursorImage (Pixmap pixmap, int xHotspot, int yHotspot);
+
+	/** Only viable on the desktop. Will set the mouse cursor image to the image represented by the {@link Cursor}.
+	 * 
+	 * @param cursor the mouse cursor image as a {@link Cursor} created with {@link #newCursor(Pixmap, int, int)}, or null to
+	 *           revert to the default operating system cursor */
+	public void setCursor (Cursor cursor);
+
+	/** Create a new cursor represented by the {@link com.badlogic.gdx.graphics.Pixmap}. The Pixmap must be in RGBA8888 format,
+	 * width & height must be powers-of-two greater than zero (not necessarily equal), and alpha transparency must be single-bit
+	 * (i.e., 0x00 or 0xFF only). To represent the default operating system cursor, pass in a null Pixmap; xHotspot & yHotspot are
+	 * ignored in this case.
+	 * 
+	 * @param pixmap the mouse cursor image as a {@link com.badlogic.gdx.graphics.Pixmap}, or null to represent the default
+	 *           operating system cursor
+	 * @param xHotspot the x location of the hotspot pixel within the cursor image (origin top-left corner)
+	 * @param yHotspot the y location of the hotspot pixel within the cursor image (origin top-left corner)
+	 * @return a cursor object that can be used by calling {@link #setCursor(Cursor)} */
+	public Cursor newCursor (Pixmap pixmap, int xHotspot, int yHotspot);
 }

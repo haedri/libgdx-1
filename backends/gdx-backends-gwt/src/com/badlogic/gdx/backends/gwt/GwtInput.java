@@ -23,6 +23,7 @@ import com.badlogic.gdx.Input.Buttons;
 import com.badlogic.gdx.backends.gwt.widgets.TextInputDialogBox;
 import com.badlogic.gdx.backends.gwt.widgets.TextInputDialogBox.TextInputDialogListener;
 import com.badlogic.gdx.graphics.Pixmap;
+import com.badlogic.gdx.input.Cursor;
 import com.badlogic.gdx.utils.IntMap;
 import com.badlogic.gdx.utils.IntSet;
 import com.badlogic.gdx.utils.TimeUtils;
@@ -377,6 +378,15 @@ public class GwtInput implements Input {
 
 	@Override
 	public void setCursorImage (Pixmap pixmap, int xHotspot, int yHotspot) {
+	}
+	
+	@Override
+	public Cursor newCursor (Pixmap pixmap, int xHotspot, int yHotspot) {
+		return null;
+	}
+
+	@Override
+	public void setCursor (Cursor cursor) {
 	}
 
 	// kindly borrowed from our dear playn friends...
